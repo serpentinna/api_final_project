@@ -44,3 +44,8 @@ def delete_folder():
     first_folder_id = result.json()["folders"][0]["id"]
     assert result.status_code == 200
     return requests.delete(url + "folder/" + first_folder_id, headers=headers)
+
+def get_first_folder_id():
+    result = get_all_folders()
+    first_folder_id = result.json()["folders"][0]["id"]
+    return first_folder_id
